@@ -1,4 +1,5 @@
 from turtle import Turtle, Screen
+from random import choice
 
 class ClickableTurtle(Turtle):
   # our 'wrapper' class of the Turtle class
@@ -18,7 +19,7 @@ class ClickableTurtle(Turtle):
     #set turtle starting states
     self.shape("square")
     self.shapesize(1,3,1)
-    self.color("tan")
+    self.color(self.randcolor())
     self.penup()
     self.setx(self.x)
     self.sety(self.y)
@@ -35,8 +36,12 @@ class ClickableTurtle(Turtle):
   # tells what happens when button is clicked
   def click(self, x, y):
     # This is Placeholder:  What should this button do?
-    print ("Click")
+    self.forward(100)
 
   # TODO:  
   # 1) Change the button color 
   # 2) make the click method do something else
+
+  def randcolor(self):
+    colors = ["red","yellow","orange","pink"]
+    return choice(colors)
