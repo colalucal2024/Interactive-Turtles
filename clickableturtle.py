@@ -4,11 +4,12 @@ from random import choice
 class ClickableTurtle(Turtle):
   # our 'wrapper' class of the Turtle class
   def __init__(self, 
-               name = "turtle", 
-               x = -190 , 
-               y = 160):
+               name = "button", 
+               x = 0 , 
+               y = -100):
     # Runs Keyboard Turtle Constructor as well as the Turtle Constructor
     Turtle.__init__(self)
+    
     # Sets up incoming variables
     self.name = name
     self.x = x
@@ -16,8 +17,8 @@ class ClickableTurtle(Turtle):
     self.window = Screen()
 
     #set turtle starting states
-    self.shape("turtle")
-    self.shapesize(1,1,1)
+    self.shape("square")
+    self.shapesize(1,3,1)
     self.color(self.randcolor())
     self.penup()
     self.setx(self.x)
@@ -34,7 +35,8 @@ class ClickableTurtle(Turtle):
 
   # tells what happens when button is clicked
   def click(self, x, y):
-   self.forward(100)
+    # This is Placeholder:  What should this button do?
+    self.forward(100)
 
   # TODO:  
   # 1) Change the button color 
