@@ -1,5 +1,6 @@
 from turtle import Turtle
 from random import choice
+
 class KeyboardTurtle(Turtle):
   # our 'wrapper' class of the Turtle class
   def __init__(self, 
@@ -8,7 +9,7 @@ class KeyboardTurtle(Turtle):
                turn_right = "Right",
                not_straight = "Down",
                turn_left = "Left",
-               other_player = None
+               other_player = None,
                walls = None):
     # Runs Keyboard Turtle Constructor as well as the Turtle Constructor
     Turtle.__init__(self)
@@ -20,8 +21,7 @@ class KeyboardTurtle(Turtle):
     self.turn_right = turn_right
     self.turn_left = turn_left
     self.other_player = other_player
-self.walls = walls
-    #set turtle starting states
+    self.walls = walls
     self.shape("turtle")
     self.color("green")
     self.penup()
@@ -41,9 +41,10 @@ self.walls = walls
   def go_forward(self):
     last_position = (self.xcor(), self.ycor())
     self.forward(self.movement_speed)
-    if self.check_collision(self.other_player):
-      print("crash")
-      quit()
+    for wall in self.walls:
+      if self.check_collision(wall):
+        print("crash")
+        quit()
 
     if self.walls != None:
       for wall in self.walls:
@@ -58,9 +59,10 @@ self.walls = walls
   
   def go_backward(self):
     self.backward(self.movement_speed)
-    if self.check_collision(self.other_player):
-      print("crash")
-      quit()
+    for wall in self.walls:
+      if self.check_collision(wall):
+        print("crash")
+        quit()
       
   def go_right(self):
     self.right(self.turn_speed)
@@ -76,7 +78,7 @@ self.walls = walls
   # it doesn't NEED to.  It can check against any
   # other turtle object
 
-  def check_wall_collision(self, obj_to_check):
+  def check_collision(self, obj_to_check):
     turtle_rad = 10
     wall_rad = 10
     distance_x = obj_to_check.xcor() - self.xcor()

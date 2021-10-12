@@ -1,3 +1,4 @@
+'''
 from turtle import Turtle, ontimer
 
 
@@ -28,3 +29,4 @@ class MovingTurtle(Turtle):
       return True
     else:
       return False
+'''
