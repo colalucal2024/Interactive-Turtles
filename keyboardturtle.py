@@ -11,7 +11,7 @@ class KeyboardTurtle(Turtle):
                turn_left = "Left",
                other_player = None,
                walls = None,
-               winningwalls = None):
+               winningwall = None):
     # Runs Keyboard Turtle Constructor as well as the Turtle Constructor
     Turtle.__init__(self)
     
@@ -23,7 +23,7 @@ class KeyboardTurtle(Turtle):
     self.turn_left = turn_left
     self.other_player = other_player
     self.walls = walls
-    self.winningwalls = winningwalls
+    self.winningwall = winningwall
     self.shape("turtle")
     self.color("green")
     self.penup()
@@ -41,6 +41,7 @@ class KeyboardTurtle(Turtle):
 
   # Movement Methods
   def go_forward(self):
+    collided=False
     self.forward(self.movement_speed)
     '''
     for wall in self.walls:
@@ -51,10 +52,9 @@ class KeyboardTurtle(Turtle):
         self.goto(-270, -170)
 '''
 
-    for winningwall in self.winningwalls:
-      if self.check_collision(winningwall):
-        print("***YOU WIN***")
-        quit()
+    if self.check_collision(self.winningwall):
+      print("***YOU WIN***")
+      quit()
 
   
 
@@ -66,10 +66,10 @@ class KeyboardTurtle(Turtle):
       if collided :
         self.goto(-270, -170)
 
-      for winningwall in self.winningwalls:
-        if self.check_collision(winningwall):
-          print("***YOU WIN***")
-          quit()
+  
+      if self.check_collision(self.winningwall):
+        print("***YOU WIN***")
+        quit()
 
 
 
@@ -83,10 +83,10 @@ class KeyboardTurtle(Turtle):
     if collided :
         self.goto(-270, -170)
 
-    for winningwall in self.winningwalls:
-      if self.check_collision(winningwall):
-        print("***YOU WIN***")
-        quit() 
+    
+    if self.check_collision(self.winningwall):
+      print("***YOU WIN***")
+      quit() 
   def go_right(self):
     self.right(self.turn_speed)
 

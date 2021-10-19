@@ -1,6 +1,6 @@
 from turtle import Screen
 from keyboardturtle import KeyboardTurtle
-from clickableturtle import ClickableTurtle
+#from clickableturtle import ClickableTurtle
 from winningwall import Winningwall
 from wall import Wall
 
@@ -52,7 +52,7 @@ wall_list.append(Wall(300,0,6,.5))
 wall_list.append(Wall(280,145,12,.5))
 
 w2 = Winningwall(270,200,3,1)
+player_1.winningwall = w2
 # This is needed to listen for inputs
 window.listen()
 window.mainloop()
-
