@@ -39,11 +39,8 @@ class ClickableTurtle(Turtle):
     # This is Placeholder:  What should this button do?
     os.system("python3 main.py")
 
-  # TODO:  
-  # 1) Change the button color 
-  # 2) make the click method do something else
 
   def randcolor(self):
-    colors = ["red","yellow","orange","pink"]
+    colors = ["red","blue","orange","green"]
     return choice(colors)
 

@@ -1,6 +1,6 @@
 from turtle import Screen
 from keyboardturtle import KeyboardTurtle
-#from clickableturtle import ClickableTurtle
+from clickableturtle import ClickableTurtle
 from winningwall import Winningwall
 from wall import Wall
 
@@ -10,9 +10,27 @@ window = Screen()
 screen_width = 600
 screen_height = 400
 window.setup(screen_width, screen_height)
-
+window.bgpic("world.png")
 # set up clickable instance
+turt = ClickableTurtle(window)
+turt.shape("turtle")
+turt.shapesize(2)
+turt.goto(-260,155)
 
+cir = ClickableTurtle(window)
+cir.shape("circle")
+cir.shapesize(2)
+cir.goto(-185,155)
+
+arr = ClickableTurtle(window)
+arr.shape("arrow")
+arr.shapesize(2)
+arr.goto(-110,155)
+
+squ = ClickableTurtle(window)
+squ.shape("square")
+squ.shapesize(2)
+squ.goto(-35,155)
 
 #list setup
 wall_list = []

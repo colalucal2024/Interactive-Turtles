@@ -9,7 +9,7 @@ class Wall (Turtle):
 
 
       #Geneal Setup
-      self.color("red")
+      self.color("white")
       self.penup()
       self.shape("square")
       self.shapesize(self.y_size, self.x_size)
