@@ -25,7 +25,7 @@ class KeyboardTurtle(Turtle):
     self.walls = walls
     self.winningwall = winningwall
     self.shape("turtle")
-    self.color("green")
+    self.color("blue")
     self.penup()
 
     # Sets up keyboard command examples
