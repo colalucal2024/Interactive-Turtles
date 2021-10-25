@@ -1,3 +1,4 @@
+#dont need as no moving turtle in game
 '''
 from turtle import Turtle, ontimer
 

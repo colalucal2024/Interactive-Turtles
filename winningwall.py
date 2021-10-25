@@ -1,4 +1,6 @@
 from turtle import Turtle
+
+#class for wall when you reach end
 class Winningwall (Turtle):
   def __init__(self, starting_x, starting_y, x_size, y_size):
       Turtle.__init__(self)

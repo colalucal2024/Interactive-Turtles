@@ -1,6 +1,7 @@
 from turtle import Turtle
-from random import choice
 
+
+#setup class for clickable turtle on staring screen
 class KeyboardTurtle(Turtle):
   # our 'wrapper' class of the Turtle class
   def __init__(self, 
@@ -51,13 +52,13 @@ class KeyboardTurtle(Turtle):
     if collided :
         self.goto(-270, -170)
 '''
-
+#hit winning wall
     if self.check_collision(self.winningwall):
       print("***YOU WIN***")
       quit()
 
   
-
+#when not touching a wall
     if self.walls != None:
       for wall in self.walls:
         if self.check_collision(wall):
@@ -66,7 +67,7 @@ class KeyboardTurtle(Turtle):
       if collided :
         self.goto(-270, -170)
 
-  
+  #winning wall
       if self.check_collision(self.winningwall):
         print("***YOU WIN***")
         quit()
@@ -114,5 +115,4 @@ class KeyboardTurtle(Turtle):
       return True
     else:
       return False
-    # TODO: finish setting up the inputs (left and down)
       

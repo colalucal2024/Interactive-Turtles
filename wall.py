@@ -1,4 +1,6 @@
 from turtle import Turtle
+
+#class for wall
 class Wall (Turtle):
   def __init__(self, starting_x, starting_y, x_size, y_size):
       Turtle.__init__(self)
@@ -8,7 +10,7 @@ class Wall (Turtle):
       self.y_size = y_size
 
 
-      #Geneal Setup
+      #General Setup
       self.color("red")
       self.penup()
       self.shape("square")

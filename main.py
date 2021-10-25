@@ -1,7 +1,9 @@
 from turtle import Screen
 from keyboardturtle import KeyboardTurtle
-from clickableturtle import ClickableTurtle
+from clickableturtle import ClkTurt
 from clickableturtle import ClkSqu
+from clickableturtle import ClkCir
+from clickableturtle import ClkArr
 from winningwall import Winningwall
 from wall import Wall
 
@@ -13,41 +15,39 @@ screen_height = 400
 window.setup(screen_width, screen_height)
 window.bgpic("baw.png")
 
+#define walls
 wall_list = []
 player_1 = KeyboardTurtle(window, walls = wall_list)
-# set up clickable instance
-turt = ClickableTurtle(window)
+
+#clickable turtle
+turt = ClkTurt(window, player=player_1)
 turt.shape("turtle")
 turt.shapesize(2)
 turt.goto(-260,155)
 
-cir = ClickableTurtle(window)
+#clickable circle
+cir = ClkCir(window, player=player_1)
 cir.shape("circle")
 cir.shapesize(2)
 cir.goto(-185,155)
 
-arr = ClickableTurtle(window)
+#clickable arrow
+arr = ClkArr(window, player=player_1)
 arr.shape("arrow")
 arr.shapesize(2)
 arr.goto(-110,155)
 
+#clickable square
 squ = ClkSqu(window, player=player_1)
 squ.shape("square")
 squ.shapesize(2)
 squ.goto(-35,155)
 
-#list setup
-
-#set up players
-
-##player_2 = KeyboardTurtle(window, "w","a", "s", "d")
-
+#player starting state
 player_1.goto(-270, -170)
 
-# set target of other player(our collison check) to the opposite player
-#player_1.other_player = player_2
-#player_2.other_player = player_1
 
+#list of walls in maze
 w1 = Wall(-300,-180,.5,200)
 wall_list.append(w1)
 wall_list.append(Wall(-50,200,29,.5))
@@ -73,8 +73,10 @@ wall_list.append(Wall(175,-100,5,.5))
 wall_list.append(Wall(300,0,6,.5))
 wall_list.append(Wall(280,145,12,.5))
 
+#list for winning wall in maze
 w2 = Winningwall(270,200,3,1)
 player_1.winningwall = w2
+
 # This is needed to listen for inputs
 window.listen()
 window.mainloop()
