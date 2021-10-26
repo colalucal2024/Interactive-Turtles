@@ -1,7 +1,5 @@
 from turtle import Turtle, Screen
 from random import choice
-from keyboardturtle import KeyboardTurtle
-from wall import Wall
 import os
 
 

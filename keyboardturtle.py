@@ -44,14 +44,8 @@ class KeyboardTurtle(Turtle):
   def go_forward(self):
     collided=False
     self.forward(self.movement_speed)
-    '''
-    for wall in self.walls:
-      if self.check_collision(wall):
-        collided = True
-        break
-    if collided :
-        self.goto(-270, -170)
-'''
+
+
 #hit winning wall
     if self.check_collision(self.winningwall):
       print("***YOU WIN***")
@@ -67,41 +61,35 @@ class KeyboardTurtle(Turtle):
       if collided :
         self.goto(-270, -170)
 
-  #winning wall
-      if self.check_collision(self.winningwall):
-        print("***YOU WIN***")
-        quit()
-
-
-
   
+  #def backwards
   def go_backward(self):
+    collided=False
     self.backward(self.movement_speed)
-    for wall in self.walls:
-      if self.check_collision(wall):
-        collided = True
-        break
-    if collided :
-        self.goto(-270, -170)
 
-    
+
+#hit winning wall
     if self.check_collision(self.winningwall):
       print("***YOU WIN***")
-      quit() 
+      quit()
+
+  
+#when not touching a wall
+    if self.walls != None:
+      for wall in self.walls:
+        if self.check_collision(wall):
+          collided = True
+          break
+      if collided :
+        self.goto(-270, -170)
+
   def go_right(self):
     self.right(self.turn_speed)
 
   def go_left(self):
     self.left(self.turn_speed)
 
-
-  # Useful Methods
-
-  # This checks if object collides with another object.  
-  # Right now it checks against the other player, but 
-  # it doesn't NEED to.  It can check against any
-  # other turtle object
-
+# def collision checker
   def check_collision(self, obj_to_check):
     turtle_rad = 10
     wall_rad = 10
